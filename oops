@@ -1,0 +1,36 @@
+Q) 
+
+#include <iostream>
+using namespace std;
+
+class Student{
+    //properties
+    string name;
+    int age;
+    int roll_no;
+    
+    public:
+    Student(string n, int a, int r)
+    {
+        name = n;
+        age = a;
+        roll_no = r;
+    }
+    Student(Student &a){
+        name = a.name;
+        age = a.age;
+        roll_no = a.roll_no;
+    }
+    
+};
+
+int main()
+{
+    Student obj1("Lokesh", 20, 01);
+    Student obj2(obj1);
+    
+    return 0;
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
