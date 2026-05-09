@@ -82,7 +82,87 @@ int main(){
     cout<<obj1.getter();
     return 0;
 }
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------
+SINGLE INHERITANCE
+-------------------
+#include<iostream>
+using namespace std;
+//Inheritance
 
+class Human{
+    protected:// its means iska access child class ke paass hi hoga 
+    string name;
+    
+    
+};
+
+class person : public Human   //paremt is always on right side and child is always on left side
+{
+    int age;
+    
+    public: 
+    person(string n, int a){
+        name = n;
+        age = a;
+        
+    }
+    
+    void display(){
+        cout<<name<<" "<<age;
+    }
+};
+
+
+int main(){   //agr inherit krna h to obj hmesha child class ka hi bnega
+    
+    person obj("Lokesh",20);
+    obj.display(); //sbse niche vala child sbki propertie access krta hai
+    
+    return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------
+MULTIPLE INHERITANCE
+-----------------------
+
+#include<iostream>
+using namespace std;
+
+class Human{
+    protected:
+    string name;
+    
+};
+
+class Person
+{
+    protected:
+    int age;
+};
+
+
+class student : public Human, public Person{   // function is used for access private data class
+    int roll_no;
+    public:
+    student(string n, int a, int r){
+        name = n;
+        age = a;
+        roll_no = r;
+    }
+    
+    void display(){
+        cout<<name<<" "<<age<<" "<<roll_no;
+    }
+}; 
+
+int main(){
+     student obj("Lokesh",20, 02);
+     
+    obj.display(); 
+    
+    return 0;
+}
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
