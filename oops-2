@@ -165,4 +165,100 @@ int main(){
 }
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+--------------
+POLLYMORPHISM
+--------------
+#include<iostream>
+using namespace std;
+
+//Pollymorphism
+//Fuction overloading
+
+class student{  //class are always ended by semicollunm(;)
+
+    int length;
+    int breadth;
+    
+    public:
+    int area(int l, int r){
+        return(l*r);
+    }
+        int area(int side)
+        {
+            return(side*side);
+        }
+    };
+    
+
+
+int main(){
+    
+    student obj;
+    cout<<"Area of Rectangle is:"<<obj.area(3,4)<<endl;
+    cout<<"Area of Square is:"<<obj.area(4)<<endl;
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------
+OPERATOR OVERLOADING       // add two class 
+-------------------------
+
+#include<iostream>
+using namespace std;
+
+//Operator Overloading
+
+class Complex
+{
+    int real;
+    int imaginary;
+    
+    public:
+    Complex(){ // make a constructor
+        
+    }
+    Complex(int real, int imaginary)
+    {
+        this->real = real;
+        this->imaginary = imaginary;
+    }
+    
+    Complex operator + (Complex &c){
+        
+        Complex ans;
+        ans.real = real + c.real;
+        ans.imaginary = imaginary + c.imaginary;
+        return ans;
+    }
+    
+    void display(){
+        cout<<real<<"+i"<<imaginary<<endl;
+    }
+};
+
+
+int main(){
+    
+    Complex c1(3,4);
+    Complex c2(2,4);
+    Complex c3 = c1+c2;
+    c1.display();
+    c2.display();
+    c3.display();
+    
+    return 0;
+}
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------
+
+-------------------------
+
+
+
+
 
